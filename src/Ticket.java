@@ -8,24 +8,20 @@
  * @author wendy
  */
 public class Ticket {
-    private int numero; 
+    private int codigo; 
     private String Tipo; 
 
-    public Ticket() {
-    }
-
-    public Ticket(int numero, String Tipo) {
-        this.numero = numero;
+    public Ticket(String Tipo) {
         this.Tipo = Tipo;
     }
     
 
-    public int getNumero() {
-        return numero;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setCodigo(int numero) {
+        this.codigo= numero;
     }
 
     public String getTipo() {
@@ -35,5 +31,11 @@ public class Ticket {
     public void setTipo(String Tipo) {
         this.Tipo = Tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket " + "Numero: " + codigo + "Tipo: " + Tipo + ' ';
+    }
+    
     
 }

@@ -13,12 +13,43 @@ import java.util.List;
  */
 public class TicketList {
  private static TicketList ticketList;
- private List<Ticket> ticket;
+ private List<Ticket> tickets;
+ 
 
  public TicketList() {
- ticket= new ArrayList<>();   
+ tickets= new ArrayList<>();   
  }
 
+public boolean insert(Ticket ticket) {
+    int newCode = getsiguienteCodigo(); 
+    ticket.setCodigo(newCode); 
+    return tickets.add(ticket);
+}
+public boolean delete(Ticket ticket) {
+return tickets.remove(ticket);
+    }
+public boolean deleteforValue(Tipo tipo){
+  return 
+}
+public Ticket search(int codigo) {
+   for (Ticket ticket : tickets) {
+   if (ticket.getCodigo() == codigo) {
+    return ticket;
+            }
+        }
+        return null;
+    }
+
+private int getsiguienteCodigo() {
+        int maxCode = 0;
+        for (Ticket ticket : tickets) {
+            maxCode = Math.max(maxCode, ticket.getCodigo());
+        }
+        return maxCode + 1; 
+    }
+public void agregarTicket(Ticket ticket) {
+        tickets.add(ticket);
+    }
 }
 
 
